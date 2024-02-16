@@ -1,8 +1,15 @@
 {
   "name": "tailwindtouno",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Convert any tailwind plugin to unocss preset",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cap-go/tailwindtouno.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Cap-go/tailwindtouno/issues"
+  },
   "scripts": {
     "test": "vitest"
   },

@@ -1,3 +1,4 @@
+
 function get(unoConfig, path, defaultValue) {
   // Convert the path from Tailwind's dot notation to UnoCSS's structure
   const keys = Array.isArray(path) ? path : path.split('.');
@@ -27,8 +28,7 @@ function get(unoConfig, path, defaultValue) {
   return result;
 }
 
-
-const pluginToPreset = (presetName, tailwindPlugin, unoConfig) => {
+export default pluginToPreset = (presetName, tailwindPlugin, unoConfig) => {
   const unoPreset = {
     name: presetName,
     variants: [],
