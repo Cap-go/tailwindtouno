@@ -1,6 +1,6 @@
 {
   "name": "tailwindtouno",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Convert any tailwind plugin to unocss preset",
   "main": "index.js",
   "repository": {

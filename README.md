@@ -25,17 +25,31 @@ If you use many tailwind plugins, repeat the 2 last lines for each plugin.
 ```typescript
 import { defineConfig, presetAttributify, presetUno } from 'unocss'
 
-import tailwindToUno from 'tailwindtouno';
-import colors  from 'tailwindcss/colors';
+import { pluginToPreset, TailwindColorToUno, TailwindThemeToUno } from 'tailwindtouno';
+import containerQueries  from 'tailwindcss/container-queries';
+import { colors } from 'tailwindcss/colors';
 
 const unoConfig = defineConfig({
   presets: [
     presetAttributify({ /* preset options */}),
     presetUno(),
   ],
+  theme: {
+    extend: {
+      colors: {
+        ...TailwindColorToUno(colors),
+      },
+      ...TailwindThemeToUno({
+        extend: {
+          screens: {
+            '3xl': '1600px',
+          },
+        },
+      }),
+    }
+  }
 })
-// pluginToPreset = (presetName, tailwindPlugin, unoConfig) 
-const presetRes = tailwindToUno('tailwindcsscolor', colors, unoConfig)
+const presetRes = pluginToPreset('tailwindContainerQueries', containerQueries, unoConfig)
 unoConfig.presets.push(presetRes)
 
 export default unoConfig
